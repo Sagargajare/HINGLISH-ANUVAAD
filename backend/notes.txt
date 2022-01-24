@@ -1,0 +1,2 @@
+sudo ln -s /etc/nginx/sites-available/project.conf /etc/nginx/sites-enabled/
+uwsgi --socket backend.sock --module backend.wsgi --chmod-socket=666

@@ -1,0 +1,9 @@
+[Unit]
+Description=uwsgi emperor for micro domains website
+After=network.target
+[Service]
+User=root
+Restart=always
+ExecStart= /root/venv/bin/uwsgi --emperor /root/venv/vassals --uid root --gid root
+[Install]
+WantedBy=multi-user.target

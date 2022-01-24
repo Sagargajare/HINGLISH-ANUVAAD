@@ -1,0 +1,102 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "HINGLISH ANUVAAD",
+    "version": "1.0.0",
+    "title": "Team Fledgling ",
+    "contact": {
+      "email": "sggajare360@gmail.com"
+    }
+  },
+  "host": "45.32.37.234",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Model Api",
+      "description": "Hinglish to English",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/predict/{inputtext}": {
+      "get": {
+        "tags": [
+          "Model Api"
+        ],
+        "summary": "Text Hinglish Input to get English output",
+        "description": "Returns English output",
+        "operationId": "getHinglishtoenglish",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "inputtext",
+            "in": "path",
+            "description": "Text Hinglish Input to get English output",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "output": {
+                  "type": "string",
+                  "example": "Output Translated Text"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sentiment/{inputtext}": {
+      "get": {
+        "tags": [
+          "Model Api"
+        ],
+        "summary": "Get sentiment Analysis",
+        "description": "Returns sentiment Analysis",
+        "operationId": "getsentimentanalysis",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "inputtext",
+            "in": "path",
+            "description": "sentiment Analysis",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "output": {
+                  "type": "string",
+                  "example": "pos"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
